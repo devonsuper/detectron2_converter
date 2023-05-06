@@ -6,6 +6,7 @@ adapted from https://github.com/NVIDIA/TensorRT/tree/release/8.6/samples/python/
 **download model**
 - download model weights from https://github.com/norlab-ulaval/PercepTreeV1
 - make sure the weights file matches the name of the model that you will use. Example: R-50_RGB_60k.pth for model R-50_RGB_60k
+- put this file into ./models/PercepTreeV1/
 
 **Export yaml and pkl files from your model**
 Edit lines 27 to 29 in "export_pkl_yaml.py" to reflect your models details:
