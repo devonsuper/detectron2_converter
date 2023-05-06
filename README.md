@@ -9,6 +9,7 @@ adapted from https://github.com/NVIDIA/TensorRT/tree/release/8.6/samples/python/
 - put this file into ./models/PercepTreeV1/
 
 **Export yaml and pkl files from your model**
+
 Edit lines 27 to 29 in "export_pkl_yaml.py" to reflect your models details:
 ```
 model_name = "R-50_RGB_60k"
@@ -18,9 +19,11 @@ detectron2_config_file = "COCO-Keypoints/keypoint_rcnn_R_50_FPN_3x.yaml"
 optional: edit lines 43-52 to customize model
 
 *Run export_pkl_yaml.py*
+
 ``` python export_pkl_yaml.py ```
 
 **Get third party repos and install requirements** 
+
 ```
 mkdir third_party
 cd third_party
@@ -31,6 +34,7 @@ pip install -r ./TensorRT/samples/python/detectron2/requirements.txt
 ```
 
 **Change these lines of detectron2**
+
 ```vim detectron2/tools/deploy/export_model.py```
 
 change lines 165-167 from this:
@@ -47,6 +51,7 @@ aug = T.ResizeShortestEdge(
 ```
 
 **run conversion to onnx**
+
 edit model_name variable in conversion1.sh and conversion2.sh to reflect the model you are using
 
 ```
@@ -56,6 +61,7 @@ bash conversion2.sh
 ```
 
 **onnx to tensorrt**
+
 this can be run on desktop or jetson
 
 example for R-50_RGB_60k
